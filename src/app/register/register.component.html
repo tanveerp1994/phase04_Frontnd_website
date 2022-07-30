@@ -1,0 +1,150 @@
+<html>
+    <body>
+<nav class=" navbar navbar-expand-lg navbar-light" style="background-color:rgba(22, 158, 22, 0.699)">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <img src="/assets/p3.jfif" height="30px" width="30px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a [routerLink]="['/home']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-home"></i>&nbsp;Home</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/vegsample']" style="color:floralwhite" class="nav-link"><i class="fa fa-cutlery"></i>&nbsp;Food Items</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/aboutsample']" style="color:floralwhite" class="nav-link" ><i class="fa fa-user-secret"></i>&nbsp;About us</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/contactsample']" style="color:floralwhite"  class="nav-link" ><i class="fa fa-phone-square" ></i>&nbsp;Contact us</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a [routerLink]="['/login']" style="color:floralwhite" class="nav-link"><i class="fa fa-sign-in"></i>&nbsp;Login</a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+<div class="card container">
+    <div class="card-header heading" align="center">
+        <h5>New User - Register here!</h5>
+    </div>
+<div class="card-body">
+    <form novalidate (ngSubmit)="save(regForm)" #regForm="ngForm" >
+        
+        <!-- firstname -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="firstNameId">First Name :</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="firstNameId" 
+                minlength="4" 
+                name="firstName" 
+                [(ngModel)]=register.firstName 
+                #firstNameVar="ngModel"
+                [ngClass]="{'is-invalid':(firstNameVar.touched||firstNameVar.dirty)&&!firstNameVar.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=firstNameVar.errors?.required>
+                        The first name is required
+                    </span>
+
+                    <span *ngIf=firstNameVar.errors?.minlength>
+                        The first name should be 4 characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <!-- lastname -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="lastNameId">Last Name :</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="lastNameId" 
+                minlength="4" 
+                name="lastName" 
+                [(ngModel)]=register.lastName 
+                #lastNameVar="ngModel"
+                [ngClass]="{'is-invalid':(lastNameVar.touched||lastNameVar.dirty)&&!lastNameVar.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=lastNameVar.errors?.required>
+                        The last name is required
+                    </span>
+
+                    <span *ngIf=lastNameVar.errors?.minlength>
+                        The last name should be 4 characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <!-- email -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="emailId">Email :</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="emailId"  
+                name="email" 
+                [(ngModel)]=register.email 
+                #email="ngModel"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                [ngClass]="{'is-invalid':(email.touched||email.dirty)&&!email.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=email.errors?.required>
+                        Email is required
+                    </span>
+
+                    <span *ngIf=email.errors?.pattern>
+                        please enter valid email format
+                    </span>
+                </span>
+            </div>            
+        </div>
+
+        <!-- mobile -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="mobileId">Mobile :</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="mobileId"  
+                name="mobile" 
+                [(ngModel)]=register.mobile
+                #mobile="ngModel"
+                pattern="^((\\+91-?)|0)?[0-9]{10}$" 
+                [ngClass]="{'is-invalid':(mobile.touched||mobile.dirty)&&!mobile.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=mobile.errors?.required>
+                        Mobile is required
+                    </span>
+
+                    <span *ngIf=mobile.errors?.pattern>
+                        please enter Mobile email format
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <button class="btn btn-success" type="submit" [disabled]="!regForm.valid">submit</button>
+    </form>
+</div>
+</div>
+<br><br><br><br><br><br><br>
+<footer>
+  <div class="text-center p-3" style="background-color:rgb(151, 150, 150)">
+      © 2021 Copyright:
+      
+      <a  [routerLink]="['/home']" style="color:white;text-decoration: none;">Kitchen story.com</a>
+    
+    </div>
+    </footer>
+</body>
+</html>

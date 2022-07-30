@@ -1,0 +1,66 @@
+<html>
+    <nav class=" navbar navbar-expand-lg navbar-light" style="background-color:rgba(22, 158, 22, 0.699)">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="/assets/p3.jfif" height="30px" width="30px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a [routerLink]="['/home']"  style="color:white;font-size:medium;" class="nav-link active" aria-current="page"><i class="fa fa-home"></i>&nbsp;Home</a>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+
+        <div class="container">
+            
+        <img  class="first" src="/assets/pic11.png">
+        
+                <meta charset="utf-8">
+                <meta name="viewport" content=
+                    "width=device-width, initial-scale=1,shrink-to-fit=no">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous">      
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+                <br><br>
+                    <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/pic10.png" alt="Card image cap" height="270px" width="300px"><br>
+                            <p class="card-text">
+                                &nbsp;&nbsp; &nbsp;&nbsp;
+                                <a [routerLink]="['/change']" style="color:floralwhite" >
+                                    <button class="btn btn-info">To Change Password</button></a>
+                            </p>
+                    </div>
+              
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/pic9.jpg" alt="Card image cap" height="270px" width="300px"><br>
+                            <p class="card-text">
+                                &nbsp;&nbsp;
+                                <a [routerLink]="['/adveg']">
+                                    <button class="btn btn-info"> View Vegetables</button></a>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <a [routerLink]="['/additem']">
+                                        <button class="btn btn-info">Add Vegetables</button></a>
+                      </p>    
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="/assets/pic8.jpeg" alt="Card image cap" height="270px" width="300px"><br>
+                            <p class="card-text">
+                                &nbsp; &nbsp; &nbsp;
+                                <a [routerLink]="['/adfruit']">
+                                    <button class="btn btn-info"> View Fruits</button></a>
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <a [routerLink]="['/additem1']">
+                                        <button class="btn btn-info">Add Fruits</button></a>
+                            </p>
+                    </div>
+                </div>
+              </div>
+              <br><br><br>
+        
+<router-outlet></router-outlet>

@@ -1,0 +1,123 @@
+<html>
+<body>
+    <nav class=" navbar navbar-expand-lg navbar-light" style="background-color:rgba(22, 158, 22, 0.699)">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="/assets/p3.jfif" height="30px" width="30px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a [routerLink]="['/kitchen']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-leaf"></i>&nbsp;vegetables</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/utensils']" style="color:floralwhite" class="nav-link"><i class="fa fa-lemon-o"></i>&nbsp;Fruits</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/about']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-user-secret"></i>&nbsp;About us</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a [routerLink]="['/cart']"  style="color:floralwhite"class="nav-link"><i class="fa fa-shopping-cart"></i>&nbsp;My cart</a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink]="['/home']" style="color:floralwhite" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="image-aboutus-banner"style="margin-top:10px">
+        <div class="container">
+         <div class="row">
+             <div class="col-md-12">
+              <h1 class="lg-text">Contact Us</h1>
+              <p class="image-aboutus-para">To make safe and healthier choices, order online on Bigbasket and have it delivered to your house.</p>
+            </div>
+         </div>
+     </div>
+     </div>
+    <br/>
+
+<div class="container">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>  
+    <div class="row">
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            <div class="text-center text-md-left">
+                <a class="btn btn-info" onclick="document.getElementById('contact-form').submit();">Send</a> &nbsp;&nbsp;
+            
+                
+
+            </div>
+            <div class="status"></div>
+        </div>
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fa fa-map"></i>
+                    <p>Bangalore,Karnataka</p>
+                </li>
+
+                <li><i class="fa fa-phone"></i>
+                    <p>+91 9988888899</p>
+                </li>
+
+                <li><i class="fa fa-envelope"></i>
+                    <p>contact@kitchen story.com</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<br>
+<br><br>
+<br>
+<footer>
+<div class="text-center p-3" style="background-color:rgb(155, 151, 151)">
+    © 2021 Copyright:
+    
+    <a  [routerLink]="['/home']" style="color:white;text-decoration: none;">Kitchen story.com</a>
+  
+  </div>
+</footer>
+  </html>
+<router-outlet></router-outlet>

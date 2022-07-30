@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(223, 250, 223);
+}
+.image-aboutus-banner {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('/assets/bk.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding-top: 200px;
+    padding-bottom:60px;
+ }
+ h2{
+     
+     color:rgb(54, 53, 53);
+ }

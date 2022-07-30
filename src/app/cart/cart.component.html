@@ -1,0 +1,84 @@
+<nav class=" navbar navbar-expand-lg navbar-light" style="background-color:rgba(22, 158, 22, 0.699)">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img src="/assets/p3.jfif" height="30px" width="30px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a [routerLink]="['/kitchen']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-leaf"></i>&nbsp;vegetables</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/utensils']" style="color:floralwhite" class="nav-link"><i class="fa fa-lemon-o"></i>&nbsp;Fruits</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/about']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-user-secret"></i>&nbsp;About us</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/contact']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-phone-square"></i>&nbsp;Contact us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/home']" style="color:floralwhite" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="container">
+<div class='table-responsive'>
+  <table class='table'>
+      <thead>
+          <tr class="bg-info">
+              <th>Name</th>
+              <th>cost</th>
+              <th>quantity</th>
+              <th>Total</th>
+              <th>Delete</th>
+             
+
+          </tr>
+      </thead>
+      <tbody>
+        
+          <tr *ngFor='let item of items'>
+            <td *ngIf='item.vegetablename'>{{item. vegetablename}} </td>
+            <td *ngIf='item.vegetablecost'>{{item. vegetablecost|currency:"INR"}} </td>
+            <td *ngIf='item.vegetablequantity'> <button class="btn btn-info" (click)='increment(item.vegetableid)'>+</button>{{item. vegetablequantity}}
+            <button class="btn btn-info" (click)='decrement(item.vegetableid)'>-</button></td>
+            <td *ngIf='item.vegetabletotal'>{{item.vegetabletotal|currency:"INR"}}</td>
+            <td><button class="btn btn-dark" (click)='onDelete(item.vegetablename)'>Remove</button></td>
+          </tr>
+          <tr *ngFor='let item1 of items1'>
+            <td *ngIf='item1.fruitname'>{{item1. fruitname}} </td>
+            <td *ngIf='item1.fruitcost'>{{item1. fruitcost|currency:"INR"}} </td>
+            <td *ngIf='item1.fruitquantity'> <button class="btn btn-info" (click)='increment1(item1.fruitid)'>+</button>{{item1. fruitquantity}}
+              <button class="btn btn-info" (click)='decrement1(item1.fruitid)'>&nbsp;-</button></td>
+              <td *ngIf='item1.fruittotal'>{{item1.fruittotal|currency:"INR"}}</td>
+              <td><button class="btn btn-dark" (click)='onDelete1(item1.fruitname)'>Remove</button></td>
+              
+          </tr>
+          
+      </tbody>
+  </table>
+
+</div>
+<div class="row">
+<div class="col-md-6 ">
+  <h2>Total :{{cartTotal+cartTotal1|currency:"INR"}}</h2>
+ </div>
+ <div class="col-md-6 text-right">
+ <button class="btn btn-danger" (click)='clearCart()' (click)='clearCart1()'> Remove all</button>
+       
+</div>
+</div>
+<div align="center">
+
+<a [routerLink]="['/pay']" (click)='clearCart()' (click)='clearCart1()'><button class="btn btn-lg btn-success">Check out</button></a>
+</div>
+</div>

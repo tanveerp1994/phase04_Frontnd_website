@@ -1,0 +1,67 @@
+
+<nav class=" navbar navbar-expand-lg navbar-light" style="background-color:rgba(22, 158, 22, 0.699)">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+        <img src="/assets/p3.jfif" height="30px" width="30px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a [routerLink]="['/kitchen']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-leaf"></i>&nbsp;vegetables</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/utensils']" style="color:floralwhite" class="nav-link"><i class="fa fa-lemon-o"></i>&nbsp;Fruits</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/about']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-user-secret"></i>&nbsp;About us</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/contact']"  style="color:floralwhite" class="nav-link active" aria-current="page"><i class="fa fa-phone-square"></i>&nbsp;Contact us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a [routerLink]="['/cart']"  style="color:floralwhite"class="nav-link"><i class="fa fa-shopping-cart"></i>&nbsp;My cart</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/home']" style="color:floralwhite" class="nav-link"><i class="fa fa-sign-out"></i>&nbsp;Logout</a>
+        </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+<br>
+
+       <div class="container" style="margin-top:20px;">
+            <input class="form-control me-3" type="search" placeholder="Search here" [(ngModel)]="searchterm" aria-label="Search" color="green">
+          </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <div class="container" style="margin-top:20px;">
+    <div class="row card-group">
+        <div *ngFor='let mov of searchedItems' class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 17rem;">
+          <div class="card mt-4 " >
+          <img [src]='mov.vegetableimg' class="card-img-top" alt="..." width="300px" height="300px">
+          <div class="card-body">
+            <h5 class="card-title"><h4 style="color:crimson"> {{mov.vegetablename}}</h4></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h5>{{mov.vegetablecost|currency:"INR"}}/kg</h5></li>
+          </ul>
+          <div class="card-body">
+            <a [routerLink]="['/kitchen',mov.vegetableid]" class="card-link"><button class="btn btn-info">Add to cart</button></a>
+            <a [routerLink]="['/buy',mov.vegetableid]" class="card-link"><button class="btn btn-info">Buy</button></a>
+          </div>
+        </div>
+        </div>
+          <router-outlet></router-outlet>
+
+
+
